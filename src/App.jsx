@@ -7,7 +7,7 @@ import {
   Environment,
 } from "@react-three/drei";
 import { Perf } from "r3f-perf";
-import Keyboard from "./components/keyboard";
+import Keyboard from "./keyboard";
 import Text from "./text";
 import { useEffect } from "react";
 import * as THREE from "three";

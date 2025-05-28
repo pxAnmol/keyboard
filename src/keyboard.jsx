@@ -3,7 +3,7 @@ import { useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { useKeyboardControls } from "@react-three/drei";
 import gsap from "gsap";
-import { keyToMeshMap } from "../constants/keyMappings";
+import { keyToMeshMap } from "./constants/keyMappings";
 
 export default function Keyboard(props) {
   const { nodes, materials } = useGLTF("/keyboard-com.glb");
