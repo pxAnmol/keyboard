@@ -73,7 +73,7 @@ createRoot(document.getElementById("root")).render(
   <StrictMode>
     <KeyboardControls map={keyboardMap}>
       <Canvas
-        camera={{ position: [0, 2.5, 3.5], fov: 45 }}
+        camera={{fov: 50 }}
         gl={{ powerPreference: "high-performance", antialias: true }}
         shadows
       >

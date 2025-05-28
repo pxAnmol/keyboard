@@ -3,70 +3,7 @@ import { useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { useKeyboardControls } from "@react-three/drei";
 import gsap from "gsap";
-
-const keyToMeshMap = {
-  key_a: "a",
-  key_b: "b",
-  key_c: "c",
-  key_d: "d",
-  key_e: "e",
-  key_f: "f",
-  key_g: "g",
-  key_h: "h",
-  key_i: "i",
-  key_j: "j",
-  key_k: "k",
-  key_l: "l",
-  key_m: "m",
-  key_n: "n",
-  key_o: "o",
-  key_p: "p",
-  key_q: "q",
-  key_r: "r",
-  key_s: "s",
-  key_t: "t",
-  key_u: "u",
-  key_v: "v",
-  key_w: "w",
-  key_x: "x",
-  key_y: "y",
-  key_z: "z",
-  key_0: "0",
-  key_1: "1",
-  key_2: "2",
-  key_3: "3",
-  key_4: "4",
-  key_5: "5",
-  key_6: "6",
-  key_7: "7",
-  key_8: "8",
-  key_9: "9",
-  key_space: "space",
-  key_shift_left: "shift_left",
-  key_shift_right: "shift_right",
-  key_ctrl_left: "ctrl_left",
-  key_ctrl_right: "ctrl_right",
-  key_alt_left: "alt_left",
-  key_alt_right: "alt_right",
-  key_enter: "enter",
-  key_backspace: "backspace",
-  key_tab: "tab",
-  key_capslock: "capslock",
-  key_esc: "esc",
-  key_win_left: "win_left",
-  key_win_right: "win_right",
-  key_menu: "menu",
-  key_dash: "dash",
-  key_equals: "equals",
-  key_open_bracket: "open_bracket",
-  key_close_bracket: "close_bracket",
-  key_backslash: "backslash",
-  key_colon: "colon",
-  key_quote: "quote",
-  key_comma: "comma",
-  key_dot: "dot",
-  key_question: "question",
-};
+import { keyToMeshMap } from "../constants/keyMappings";
 
 export default function Keyboard(props) {
   const { nodes, materials } = useGLTF("/keyboard-com.glb");
@@ -75,9 +12,9 @@ export default function Keyboard(props) {
   const pressedKeys = useRef({});
   const keyboardState = useKeyboardControls((state) => state);
 
-  const KEY_PRESS_DEPTH = 0.2;
-  const KEY_PRESS_DURATION = 0.01;
-  const KEY_RELEASE_DURATION = 0.02;
+  const KEY_PRESS_DEPTH = 0.25;
+  const KEY_PRESS_DURATION = 0.015;
+  const KEY_RELEASE_DURATION = 0.025;
 
   useEffect(() => {
     if (!groupRef.current) return;

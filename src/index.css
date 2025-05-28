@@ -9,3 +9,8 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
+
+@font-face {
+  font-family: 'VT323';
+  src: url('/font/VT323-Regular.ttf') format('truetype');
+}
