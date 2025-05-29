@@ -69,18 +69,41 @@ const keyboardMap = [
   { name: "key_question", keys: ["Slash", "/"] },
 ];
 
+const isMobile =
+  /android|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(
+    navigator.userAgent
+  );
+
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <KeyboardControls map={keyboardMap}>
-      <Canvas
-        camera={{fov: 50 }}
-        gl={{ powerPreference: "high-performance", antialias: true }}
-        shadows
+    {isMobile ? (
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100dvh",
+          backgroundColor: "#1e293b",
+          color: "#fff",
+          fontSize: "24px",
+          fontFamily: "monospace",
+        }}
       >
-        <Suspense fallback={null}>
-          <App />
-        </Suspense>
-      </Canvas>
-    </KeyboardControls>
+        mobile users: 404 ❌
+      </div>
+    ) : (
+      <KeyboardControls map={keyboardMap}>
+        <Canvas
+          camera={{ fov: 50 }}
+          gl={{ powerPreference: "high-performance", antialias: true }}
+          shadows
+        >
+          <color args={["#1e293b"]} attach="background" />
+          <Suspense fallback={null}>
+            <App />
+          </Suspense>
+        </Canvas>
+      </KeyboardControls>
+    )}
   </StrictMode>
 );

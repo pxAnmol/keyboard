@@ -100,6 +100,8 @@ export const keyToCharMap = {
   key_8: "8",
   key_9: "9",
   key_space: " ",
+  key_enter: "\n",
+  key_tab: "\t",
   key_dash: "-",
   key_equals: "=",
   key_open_bracket: "[",
@@ -110,8 +112,6 @@ export const keyToCharMap = {
   key_comma: ",",
   key_dot: ".",
   key_question: "/",
-  key_enter: "\n",
-  key_tab: "    ",
 };
 
 export const shiftKeyMap = {
@@ -176,5 +176,4 @@ export const ignoredKeys = [
   "key_win_left",
   "key_win_right",
   "key_menu",
-  "key_capslock",
 ];

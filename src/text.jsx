@@ -1,6 +1,6 @@
 import { Html } from "@react-three/drei";
 import useTextStore from "./store/store";
-import useKeyboardInput from "./store/useKeyboardInput";
+import useKeyboardInput from "./hooks/useKeyboardInput";
 import { useRef, useEffect, useState } from "react";
 
 const Text = () => {
@@ -17,7 +17,16 @@ const Text = () => {
       const containerHeight = containerRef.current.clientHeight;
       const textHeight = textRef.current.scrollHeight;
 
-      setCanAddText(textHeight <= containerHeight || text.length === 0);
+      const buffer = 2;
+      const wouldOverflow = textHeight > containerHeight - buffer;
+
+      const lines = text.split("\n");
+      const maxLines = Math.floor(containerHeight / (6 * 1.2));
+      const tooManyLines = lines.length > maxLines;
+
+      const nearCharLimit = text.length >= 195;
+
+      setCanAddText(!wouldOverflow && !tooManyLines && !nearCharLimit);
     }
   }, [text]);
 
