@@ -84,7 +84,7 @@ const App = () => {
         backgroundBlurriness={0.5}
       />
 
-      <Perf position="top-left" />
+      {/* <Perf position="top-left" /> */}
     </>
   );
 };

@@ -59,7 +59,7 @@ const Text = () => {
         background: "rgba(0, 0, 0, 0)",
         padding: "2px",
         fontFamily: "VT323, monospace",
-        fontSize: "6px",
+        fontSize: "0.35em",
         color: "#ffffff",
         overflow: "hidden",
         position: "relative",
